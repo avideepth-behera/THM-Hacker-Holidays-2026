@@ -1,8 +1,6 @@
-# Beach Bar
+# 5 - Beach Bar
 
-**Platform:** TryHackMe
-**Category:** Boot2Root
-**Difficulty:** Easy
+**Platform:** TryHackMe | **Category:** Boot2Root | **Difficulty:** Easy
 
 ---
 
