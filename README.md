@@ -32,7 +32,7 @@ A seasonal TryHackMe event featuring a collection of cybersecurity challenges co
 
 | #  | Room / Challenge             | Category  | Level      | Writeup                                                                    |
 | -- | ---------------------------- | --------- | ---------- | -------------------------------------------------------------------------- |
-| 00 | The Brochure                 | OSINT     | ✅ Easy    | [Read](./0-The-Brochure.md)                                                |
+| 00 | The Brochure                 | OSINT     | ✅ Easy    | [Read](./0-The-Brochure/0-The-Brochure.md)                                 |
 | 01 | The Concierge Knows Too Much | AI        | ✅ Easy    | [Read](./1-The-Concierge-Knows-Too-Much/1-The-Concierge-Knows-Too-Much.md) |
 | 02 | Room 404                     | Web       | ✅ Easy    | [Read](./2-Room-404/2-Room-404.md)                                         |
 | 03 | Complimentary                | Cloud     | ✅ Easy    | [Read](./3-Complimentary/3-Complimentary.md)                               |
