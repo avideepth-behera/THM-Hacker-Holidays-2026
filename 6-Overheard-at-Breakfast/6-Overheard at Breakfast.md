@@ -1,8 +1,6 @@
-# 6 — Overheard at Breakfast
+# 6 - Overheard at Breakfast
 
-**Category:** OSINT
-**Difficulty:** Easy
-**Platform:** TryHackMe
+**Platform:** TryHackMe | **Category:** OSINT | **Difficulty:** Easy
 
 ---
 
