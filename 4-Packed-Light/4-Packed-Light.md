@@ -1,7 +1,6 @@
-# 4. Packed Light
+# 4 - Packed Light
 
-**Category:** Forensics
-**Difficulty:** Easy
+**Platform:** Tryhackme | **Category:** Forensics | **Difficulty:** Easy
 
 ## Objective
 
