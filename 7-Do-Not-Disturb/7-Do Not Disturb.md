@@ -1,8 +1,6 @@
-# 7 — Do Not Disturb
+# 7 - Do Not Disturb
 
-**Category:** Boot2Root
-**Difficulty:** Medium
-**Platform:** TryHackMe
+**Platform:** TryHackMe | **Category:** Boot2Root | **Difficulty:** Medium
 
 ---
 
