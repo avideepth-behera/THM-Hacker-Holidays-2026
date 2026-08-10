@@ -1,8 +1,6 @@
-# 8 — Towel on the Sunbed
+# 8 - Towel on the Sunbed
 
-**Category:** Web
-**Difficulty:** Medium
-**Platform:** TryHackMe
+**Platform:** TryHackMe | **Category:** Web | **Difficulty:** Medium
 
 ---
 
