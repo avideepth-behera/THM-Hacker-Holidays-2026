@@ -1,5 +1,6 @@
-# Pre-Challenge — The Brochure
+# 0 - Pre-Challenge — The Brochure
 
+**Platform:** Tryhackme
 **Category:** OSINT
 **Difficulty:** Easy
 
