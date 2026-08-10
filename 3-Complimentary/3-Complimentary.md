@@ -1,7 +1,6 @@
-# 3. Complimentary
+# 3 - Complimentary
 
-**Category:** Cloud / AWS
-**Difficulty:** Easy
+**Platform:** Tryhackme | **Category:** Cloud / AWS | **Difficulty:** Easy
 
 ---
 
