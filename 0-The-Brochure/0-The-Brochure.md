@@ -13,15 +13,15 @@ The challenge started with an **invitation card** containing a clue to an Instag
 
 Here is the clue, it was indicating to a Instagram profile.
 
-```
+
 ![Invite Card](image1.png)
-```
+
 
 Following the clue from the invitation card, I searched for the mentioned Instagram profile.
 
-```
+
 ![Resort Page](image2.png)
-```
+
 
 After checking the profile, I noticed that it was following only one account called:
 
@@ -29,9 +29,9 @@ After checking the profile, I noticed that it was following only one account cal
 veratheconcierge
 ```
 
-```
+
 ![Instagram Profile](image3.png)
-```
+
 
 This account appeared to be related to the resort's **AI concierge (assistant)**, which made it worth investigating further.
 
@@ -41,9 +41,9 @@ This account appeared to be related to the resort's **AI concierge (assistant)**
 
 The `veratheconcierge` account contained **three images**.
 
-```
+
 ![Encoded images](image4.png)
-```
+
 
 I inspected each image and noticed that every image contained a string that looked like it was encoded in **Base64**.
 
@@ -93,9 +93,9 @@ After decoding the complete Base64 string, it returned the flag.
 [FLAG REDACTED]
 ```
 
-```
+
 ![Decoding](image5.png)
-```
+
 
 ---
 
