@@ -1,9 +1,6 @@
-# 9 - CryptoCabana — TryHackMe Write-up
+# 9 - CryptoCabana
 
-**Platform:** TryHackMe
-**Room:** CryptoCabana
-**Difficulty:** Medium
-**Category:** Cloud
+**Platform:** TryHackMe | **Category:** Cloud | **Difficulty:** Medium
 
 ---
 
