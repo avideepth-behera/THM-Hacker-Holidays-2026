@@ -1,7 +1,7 @@
 # ☀️ TryHackMe — Hacker Holiday 2026
 
-![TryHackMe](https://img.shields.io/badge/TryHackMe-Hacker%20Holiday%202026-red?style=for-the-badge\&logo=tryhackme)
-![Cybersecurity](https://img.shields.io/badge/Cybersecurity-black?style=for-the-badge)
+![TryHackMe](https://img.shields.io/badge/TryHackMe-Hacker%20Holidays%202026-orange?style=for-the-badge\&logo=tryhackme)
+![Cybersecurity](https://img.shields.io/badge/Cybersecurity-green?style=for-the-badge)
 
 My personal **TryHackMe Hacker Holiday 2026** writeups, documenting the challenges, techniques, tools, and lessons learned throughout the event.
 
