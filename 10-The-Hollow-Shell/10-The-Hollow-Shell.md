@@ -1,9 +1,6 @@
-# 10 — The Hollow Shell
+# 10 - The Hollow Shell
 
-**Category:** Web
-**Difficulty:** Medium
-**Vulnerability:** Zip Slip / Path Traversal
-**Platform:** TryHackMe
+**Platform:** TryHackMe | **Category:** Web | **Difficulty:** Medium
 
 ---
 
