@@ -1,5 +1,6 @@
-# 1. The Concierge Knows Too Much
+# 1 - The Concierge Knows Too Much
 
+**Platform:** Tryhackme
 **Category:** AI Prompt Engineering
 **Difficulty:** Easy
 
