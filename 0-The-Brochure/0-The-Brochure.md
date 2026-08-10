@@ -1,10 +1,8 @@
-# 0 - Pre-Challenge — The Brochure
+# 0 - The Brochure (Pre-Challenge)
 
-**Platform:** Tryhackme
-**Category:** OSINT
-**Difficulty:** Easy
+**Platform:** Tryhackme | **Category:** OSINT | **Difficulty:** Easy
 
-Before starting the main CryptoCabana challenge, there was a small OSINT-based pre-challenge called **The Brochure**.
+Before starting the main challenge, this is a small OSINT-based pre-challenge called **The Brochure**.
 
 The challenge started with an **invitation card** containing a clue to an Instagram profile.
 
