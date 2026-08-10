@@ -1,10 +1,9 @@
-# CryptoCabana — TryHackMe Write-up
+# 9 - CryptoCabana — TryHackMe Write-up
 
 **Platform:** TryHackMe
 **Room:** CryptoCabana
 **Difficulty:** Medium
-**Category:** Cloud / Azure / Web
-**Target:** `cryptocabanaf5scjagc.z13.web.core.windows.net`
+**Category:** Cloud
 
 ---
 
