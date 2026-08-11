@@ -1,8 +1,6 @@
 # 9 — Infinity Pool
 
-**Platform:** Tryhackme
-**Category:** Boot2Root
-**Difficulty:** Medium
+**Platform:** Tryhackme | **Category:** Boot2Root | **Difficulty:** Medium
 
 ---
 
