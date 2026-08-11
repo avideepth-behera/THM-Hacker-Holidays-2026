@@ -45,7 +45,7 @@ A seasonal TryHackMe event featuring a collection of cybersecurity challenges co
 | 10 | The Hollow Shell             | Web       | ✅ Medium  | [Read](./10-The-Hollow-Shell/10-The-Hollow-Shell.md)                       |
 | 11 | Infinity Pool                | Boot2Root | ✅ Medium  | [Read](./11-Infinity-Pool/11-Infinity-Pool.md)                             |
 | 12 | After Hours                  | Forensics | ✅ Medium  | [Read](./12-After-Hours/12-After-Hours.md)                                 |
-| 13 | The Guestbook                | AI        | ✅ Medium  | [Read](./13-The-Guestbook/13-The-Guestbook.md)                             |
+| 13 | The Guestbook                | AI        | ✅ Medium  | [Read](./13-Guestbook/13-The-Guestbook.md)                             |
 | 14 | Management Wants a Word      | Forensics | ✅ Hard    | [Read](./14-Management-Wants-a-Word/14-Management-Wants-a-Word.md)         |
 
 ---
