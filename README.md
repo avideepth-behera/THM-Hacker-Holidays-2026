@@ -32,21 +32,21 @@ A seasonal TryHackMe event featuring a collection of cybersecurity challenges co
 
 | #  | Room / Challenge             | Category  | Level      | Writeup                                                                    |
 | -- | ---------------------------- | --------- | ---------- | -------------------------------------------------------------------------- |
-| 00 | The Brochure                 | OSINT     | ✅ Easy    | [Read](./0-The-Brochure/0-The-Brochure.md)                                 |
-| 01 | The Concierge Knows Too Much | AI        | ✅ Easy    | [Read](./1-The-Concierge-Knows-Too-Much/1-The-Concierge-Knows-Too-Much.md) |
-| 02 | Room 404                     | Web       | ✅ Easy    | [Read](./2-Room-404/2-Room-404.md)                                         |
-| 03 | Complimentary                | Cloud     | ✅ Easy    | [Read](./3-Complimentary/3-Complimentary.md)                               |
-| 04 | Packed Light                 | Forensics | ✅ Easy    | [Read](./4-Packed-Light/4-Packed-Light.md)                                 |
-| 05 | Beach Bar                    | Boot2Root | ✅ Easy    | [Read](./5-Beach-Bar/5-Beach-Bar.md)                                       |
-| 06 | Overheard at Breakfast       | OSINT     | ✅ Easy    | [Read](./6-Overheard-at-Breakfast/6-Overheard-at-Breakfast.md)             |
-| 07 | Do Not Disturb               | Boot2Root | ✅ Medium  | [Read](./7-Do-Not-Disturb/7-Do-Not-Disturb.md)                             |
-| 08 | Towel on the Sunbed          | Web       | ✅ Medium  | [Read](./8-Towel-on-the-Sunbed/8-Towel-on-the-Sunbed.md)                   |
-| 09 | CryptoCabana                 | Cloud     | ✅ Medium  | [Read](./9-CryptoCabana/9-CryptoCabana.md)                                 |
-| 10 | The Hollow Shell             | Web       | ✅ Medium  | [Read](./10-The-Hollow-Shell/10-The-Hollow-Shell.md)                       |
-| 11 | Infinity Pool                | Boot2Root | ✅ Medium  | [Read](./11-Infinity-Pool/11-Infinity-Pool.md)                             |
-| 12 | After Hours                  | Forensics | ✅ Medium  | [Read](./12-After-Hours/12-After-Hours.md)                                 |
-| 13 | The Guestbook                | AI        | ✅ Medium  | [Read](./13-Guestbook/13-The-Guestbook.md)                             |
-| 14 | Management Wants a Word      | Forensics | ✅ Hard    | [Read](./14-Management-Wants-a-Word/14-Management-Wants-a-Word.md)         |
+| 00 | The Brochure                 | OSINT     | 🟢 Easy    | [Read](./0-The-Brochure/0-The-Brochure.md)                                 |
+| 01 | The Concierge Knows Too Much | AI        | 🟢 Easy    | [Read](./1-The-Concierge-Knows-Too-Much/1-The-Concierge-Knows-Too-Much.md) |
+| 02 | Room 404                     | Web       | 🟢 Easy    | [Read](./2-Room-404/2-Room-404.md)                                         |
+| 03 | Complimentary                | Cloud     | 🟢 Easy    | [Read](./3-Complimentary/3-Complimentary.md)                               |
+| 04 | Packed Light                 | Forensics | 🟢 Easy    | [Read](./4-Packed-Light/4-Packed-Light.md)                                 |
+| 05 | Beach Bar                    | Boot2Root | 🟢 Easy    | [Read](./5-Beach-Bar/5-Beach-Bar.md)                                       |
+| 06 | Overheard at Breakfast       | OSINT     | 🟢 Easy    | [Read](./6-Overheard-at-Breakfast/6-Overheard-at-Breakfast.md)             |
+| 07 | Do Not Disturb               | Boot2Root | 🟡 Medium  | [Read](./7-Do-Not-Disturb/7-Do-Not-Disturb.md)                             |
+| 08 | Towel on the Sunbed          | Web       | 🟡 Medium  | [Read](./8-Towel-on-the-Sunbed/8-Towel-on-the-Sunbed.md)                   |
+| 09 | CryptoCabana                 | Cloud     | 🟡 Medium  | [Read](./9-CryptoCabana/9-CryptoCabana.md)                                 |
+| 10 | The Hollow Shell             | Web       | 🟡 Medium  | [Read](./10-The-Hollow-Shell/10-The-Hollow-Shell.md)                       |
+| 11 | Infinity Pool                | Boot2Root | 🟡 Medium  | [Read](./11-Infinity-Pool/11-Infinity-Pool.md)                             |
+| 12 | After Hours                  | Forensics | 🟡 Medium  | [Read](./12-After-Hours/12-After-Hours.md)                                 |
+| 13 | The Guestbook                | AI        | 🟡 Medium  | [Read](./13-Guestbook/13-The-Guestbook.md)                             |
+| 14 | Management Wants a Word      | Forensics | 🔴 Hard    | [Read](./14-Management-Wants-a-Word/14-Management-Wants-a-Word.md)         |
 
 ---
 
