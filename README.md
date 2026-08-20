@@ -5,7 +5,7 @@
 
 My personal **TryHackMe Hacker Holiday 2026** writeups, documenting the challenges, techniques, tools, and lessons learned throughout the event.
 
-> 🎯 **Goal:** Learn, practice, document, and improve practical cybersecurity skills through CTF-style challenges.
+> 🎯 **Goal:** Learn, practice, document, and improve practical cybersecurity skills through projects, labs and CTF challenges.
 
 ---
 
@@ -20,10 +20,12 @@ A seasonal TryHackMe event featuring a collection of cybersecurity challenges co
 * 💉 Injection
 * 🕵️ Reconnaissance & Enumeration
 * 🐧 Linux
+* 🪟 Wwindows
 * 🔑 Cryptography
 * 📦 API Security
 * 🔍 Digital Forensics
 * ⚙️ Privilege Escalation
+* 🪛 Reverse Engineering
 * 🧩 CTF Challenges Problem Solving
 
 ---
@@ -45,7 +47,7 @@ A seasonal TryHackMe event featuring a collection of cybersecurity challenges co
 | 10 | The Hollow Shell             | Web       | 🟡 Medium  | [Read](./10-The-Hollow-Shell/10-The-Hollow-Shell.md)                       |
 | 11 | Infinity Pool                | Boot2Root | 🟡 Medium  | [Read](./11-Infinity-Pool/11-Infinity-Pool.md)                             |
 | 12 | After Hours                  | Forensics | 🟡 Medium  | [Read](./12-After-Hours/12-After-Hours.md)                                 |
-| 13 | The Guestbook                | AI        | 🟡 Medium  | [Read](./13-Guestbook/13-The-Guestbook.md)                             |
+| 13 | The Guestbook                | AI        | 🟡 Medium  | [Read](./13-Guestbook/13-The-Guestbook.md)                                 |
 | 14 | Management Wants a Word      | Forensics | 🔴 Hard    | [Read](./14-Management-Wants-a-Word/14-Management-Wants-a-Word.md)         |
 
 ---
@@ -137,31 +139,31 @@ Hacker-Holiday-2026/
 │
 ├── 01- The Concierge Knows Too Much
 │
-├── 02-
+├── 02- Room 404
 │
-├── 03-
+├── 03- Complimentary
 │
-├── 04-
+├── 04- Packed Light
 │
-├── 05-
+├── 05- Beach Bar
 │
-├── 06-
+├── 06- Overheard at Breakfast
 │
-├── 07-
+├── 07- Do Not Disturb
 │
-├── 08-
+├── 08- Towel on the Sunbed
 │
-├── 09-
+├── 09- CryptoCabana
 │
-├── 10-
+├── 10- The Hollow Shell
 │
-├── 11-
+├── 11- Infinity Pool
 │
-├── 12-
+├── 12- After Hours
 │
-├── 13-
+├── 13- The Guestbook
 │
-└── 14-
+└── 14- Management Wants a Word
 ```
 
 Each challenge contains its own detailed writeup and supporting screenshots where useful.
@@ -230,9 +232,10 @@ Through Hacker Holiday 2026, I'm focusing on improving my practical skills in:
 * Vulnerability identification
 * Linux privilege escalation
 * Reconnaissance and enumeration
-* Burp Suite
+* Security Tools
 * CTF methodology
 * Manual exploitation
+* Reverse Engineering
 * Security research and documentation
 
 ---
